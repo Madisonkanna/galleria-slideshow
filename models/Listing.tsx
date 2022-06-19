@@ -12,6 +12,6 @@ export interface Listing {
       small: string;
       large: string;
     };
+    gallery: string;
   };
-  gallery: string;
 }
