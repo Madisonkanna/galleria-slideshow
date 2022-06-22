@@ -1,17 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
+import styles from "../styles/Home.module.scss";
 import getData from "../api";
+import { GetStaticProps } from "next";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const listings = getData();
   return {
     props: {
       listings: listings,
     },
   };
-}
+};
 
 export default function Home({ listings }) {
   return (
@@ -25,11 +25,16 @@ export default function Home({ listings }) {
       <div className={styles.container}>
         {listings.map((listing) => {
           return (
-            <img
-              className={styles.listing}
-              key={listing.id}
-              src={`/${listing?.images?.thumbnail}`}
-            />
+            <a key={listing.id} className={styles.listing}>
+              <img
+                className={styles.image}
+                src={`/${listing?.images?.thumbnail}`}
+              />
+              <div className={styles.authorInfo}>
+                <h2>{listing?.name}</h2>
+                <div className={styles.authorName}>{listing?.artist?.name}</div>
+              </div>
+            </a>
           );
         })}
       </div>
