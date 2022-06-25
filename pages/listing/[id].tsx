@@ -2,6 +2,7 @@ import { FC } from "react";
 import { GetStaticProps } from "next";
 import getData from "../../api";
 import { Listing } from "../../models/Listing";
+import styles from "../../styles/listingPage.module.scss";
 
 interface ListingPageProps {
   listing: Listing;
@@ -10,7 +11,12 @@ interface ListingPageProps {
 const ListingPage: FC<ListingPageProps> = ({ listing }) => {
   console.log(listing, "listing!");
 
-  return <div>{listing.name}</div>;
+  return (
+    <div className={styles.listingPage}>
+      <div>Left</div>
+      <div>Right</div>
+    </div>
+  );
 };
 
 export async function getStaticPaths() {
