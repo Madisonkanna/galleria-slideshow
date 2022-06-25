@@ -11,11 +11,11 @@
   position: relative;
   display: block;
   cursor: pointer;
-}
 
-.listing:hover {
-  opacity: 0.7;
-  transition: 0.5s;
+  :hover {
+    opacity: 0.7;
+    transition: 0.5s;
+  }
 }
 
 .image {
@@ -25,12 +25,14 @@
 .authorInfo {
   position: absolute;
   bottom: 55px;
-  left: 20px;
   text-align: left;
   padding: 0.5rem 0.9rem;
   white-space: pre-wrap;
   line-height: 30px;
   font-weight: 700;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
 
   .authorName {
     font-weight: 400;
@@ -64,9 +66,6 @@
 @media (max-width: 1200px) {
   .container {
     columns: 2 200px;
-  }
-  .title {
-    text-align: center;
   }
 }
 

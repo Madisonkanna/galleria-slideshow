@@ -11,10 +11,17 @@ interface ListingPageProps {
 const ListingPage: FC<ListingPageProps> = ({ listing }) => {
   console.log(listing, "listing!");
 
-  return (
+  return (l
     <div className={styles.listingPage}>
-      <div>Left</div>
-      <div>Right</div>
+      <div className={styles.leftContainer}>
+        <div className={}></div>
+        <img src={`/${listing.images.gallery}`}></img>
+        <div className={styles.titleContainer}>
+          <h2>{listing.name}</h2>
+          <div className={styles.authorName}>{listing.artist.name}</div>
+        </div>
+      </div>
+      <div className={styles.rightContainer}>Right</div>
     </div>
   );
 };
