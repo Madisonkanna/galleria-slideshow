@@ -9,7 +9,6 @@ interface ListingPageProps {
 
 const ListingPage: FC<ListingPageProps> = ({ listing }) => {
   console.log(listing, "listing!");
-  // const listing = listings.find((listing) => listing.id === params.listing_id);
 
   return <div>{listing.name}</div>;
 };
@@ -31,7 +30,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const listing = listings.find(
     (listing) => listing.id.toString() === params.id
   );
-  console.log(listing, "listing in props");
 
   return {
     props: {
